@@ -5,7 +5,7 @@ let globalRunId = null; // New global variable for storing the run ID
 let sessionInfo = null;
 let peerConnection = null;
 let globalLastAssistantResponse = "Hey";
-var BASE_URL = 'http://localhost:3000/';
+var BASE_URL = 'https://erstehero-cea845f6c99b.herokuapp.com/';
 // var BASE_URL = 'https://erstehero-node.vercel.app/';
 
 window.addEventListener('beforeunload', function (e) {

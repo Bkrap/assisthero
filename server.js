@@ -10,7 +10,7 @@ app.use(express.json());
 // Create assistant
 app.get('/assistant/create', async (req, res) => {
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   try {
@@ -29,7 +29,7 @@ app.get('/assistant/create', async (req, res) => {
 // Create thread
 app.get('/assistant/thread/create', async (req, res) => {
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   try {
@@ -43,7 +43,7 @@ app.get('/assistant/thread/create', async (req, res) => {
 });
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const systemSetup = "you are a demo streaming avatar from HeyGen, an industry-leading AI generation product that specialize in AI avatars and videos.\nYou are here to showcase how a HeyGen streaming avatar looks and talks.\nPlease note you are not equipped with any specific expertise or industry knowledge yet, which is to be provided when deployed to a real customer's use case.\nAudience will try to have a conversation with you, please try answer the questions or respond their comments naturally, and concisely. - please try your best to response with short answers, limit to one sentence per response, and only answer the last question."
@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, '.')));
 // Run Assistant
 app.get('/assistant/run', async (req, res) => {
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   const { threadId, assistantId } = req.query;
@@ -79,7 +79,7 @@ app.get('/assistant/run', async (req, res) => {
 app.post('/openai-create-message', async (req, res) => {
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   const { message, threadId } = req.body;
@@ -106,7 +106,7 @@ app.post('/openai-create-message', async (req, res) => {
 app.get('/messages/list', async (req, res) => {
 
     const openai = new OpenAI({
-      apiKey: "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",
+      apiKey: process.env.OPENAI_API_KEY,
     });
 
   const { threadId } = req.query;
@@ -129,7 +129,7 @@ app.get('/messages/list', async (req, res) => {
 app.get('/retrieve-run', async (req, res) => {
 
   const openai = new OpenAI({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
   });
 
   const { threadId, runId } = req.query;

@@ -175,8 +175,8 @@ app.post('/openai/complete', async (req, res) => {
 //   }
 // });
 
+const PORT = process.env.PORT || 3000;
 
-const PORT = 3000; // Use the PORT environment variable or a default
 app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}!`);
 });
